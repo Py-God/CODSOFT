@@ -1,4 +1,5 @@
 from datetime import datetime
+import os
 import sqlite3
 from tabulate import tabulate
 
@@ -51,6 +52,8 @@ class Task():
                 detail
                 )
             con.commit()
+        
+        os.system('cls||clear')
 
     # edit task in db
     def edit_task(self):
@@ -64,6 +67,8 @@ class Task():
 
             cur.execute("""UPDATE tasks set name = ? WHERE id = ?""", detail)
             con.commit()
+
+            os.system('cls||clear')
     
     # delete task from db
     def delete_task(self):
@@ -74,6 +79,8 @@ class Task():
 
             cur.execute("""DELETE FROM tasks WHERE id = ?""", str(task_no))
             con.commit()
+
+            os.system('cls||clear')
 
 
 def main():
