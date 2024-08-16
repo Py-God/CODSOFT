@@ -76,11 +76,16 @@ class Task():
         task_nos = [task_id[0] for task_id in cur.execute("SELECT id FROM tasks")]
 
         if task_no in task_nos:
+            print("Are you sure you want to delete this task?")
+            print("y - yes, n - no")
+            print()
 
-            cur.execute("""DELETE FROM tasks WHERE id = ?""", str(task_no))
-            con.commit()
+            command = input(">> ")
+            if command == "y":
+                cur.execute("""DELETE FROM tasks WHERE id = ?""", str(task_no))
+                con.commit()
 
-            os.system('cls||clear')
+                os.system('cls||clear')
 
 
 def main():
@@ -95,6 +100,8 @@ def main():
         todo.display()
 
         command = input(">> ")
+        print()
+        
         if command == "a":
             todo.add_task()
         elif command == "e":

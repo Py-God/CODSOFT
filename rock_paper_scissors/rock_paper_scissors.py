@@ -2,7 +2,7 @@ import os
 import random
 
 def main():
-    # game score initializatioin
+    # game score initialization
     score = 0
 
     # game loop

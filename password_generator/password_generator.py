@@ -16,16 +16,17 @@ def generator(length):
 def main():
     print("Password Generator")
     print("------------------")
+    print("Password length limit: 94")
+    print()
     # get and validate password length
-    while True:
-        try:
-            password_length = int(input("Password Length: "))
-        except ValueError:
-            print("Password length should be an integer.")
-            print()
-        else:
-            print(generator(password_length))
-            print()
+    try:
+        password_length = int(input("Password Length: "))
+    except ValueError:
+        print("Password length should be an integer.")
+        print()
+    else:
+        print(generator(password_length))
+        print()
 
 
 main()

@@ -2,6 +2,7 @@ import os
 import sqlite3
 from tabulate import tabulate
 
+# connection to the db
 con = sqlite3.connect(".//contact.db")
 
 cur = con.cursor()

@@ -6,6 +6,7 @@ class Calculator():
             try:
                 no1 = int(input("First Number: "))
                 no2 = int(input("Second Number: "))
+                print()
             except ValueError:
                 print("You have to supply two integers.")
                 print()
@@ -29,18 +30,23 @@ def main():
     # display basic information
     print("Calculator")
     print("----------")
+    print()
+
     print("Type: a - addition, s - subtraction, m - multiplication, d - division, x - exit")
 
     # create calculator object
     calc = Calculator()
-
+    
+    print()
+    print("---------------------")
     # prompt for a desired operator to use
     while True:
         operator = input("Enter an operator: ")
+        print()
 
         if operator in ["a", "s", "m", "d"]:
             print("Result = ", calc.calculate(operator))
-            print()
+            print("---------------------")
         elif operator == "x":
             break
         else:
