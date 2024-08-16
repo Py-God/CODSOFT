@@ -84,13 +84,17 @@ class Task():
 
 
 def main():
+    print("Todo List")
+    print("----------")
+    print()
+
     todo = Task()
 
     # program loop
     while True:
         todo.display()
 
-        command = input()
+        command = input(">> ")
         if command == "a":
             todo.add_task()
         elif command == "e":
